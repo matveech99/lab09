@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/matvey/matveech99/workspace/projects/lab06
+CMAKE_SOURCE_DIR = /home/matvey/matveech99/workspace/projects/lab09
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/matvey/matveech99/workspace/projects/lab06/_build
+CMAKE_BINARY_DIR = /home/matvey/matveech99/workspace/projects/lab09/_build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -78,7 +78,7 @@ package/fast: package
 # Special rule for the target package_source
 package_source:
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Run CPack packaging tool for source..."
-	/usr/bin/cpack --config ./CPackSourceConfig.cmake /home/matvey/matveech99/workspace/projects/lab06/_build/CPackSourceConfig.cmake
+	/usr/bin/cpack --config ./CPackSourceConfig.cmake /home/matvey/matveech99/workspace/projects/lab09/_build/CPackSourceConfig.cmake
 .PHONY : package_source
 
 # Special rule for the target package_source
@@ -152,9 +152,9 @@ install/strip/fast: preinstall/fast
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/matvey/matveech99/workspace/projects/lab06/_build/CMakeFiles /home/matvey/matveech99/workspace/projects/lab06/_build//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/matvey/matveech99/workspace/projects/lab09/_build/CMakeFiles /home/matvey/matveech99/workspace/projects/lab09/_build//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/matvey/matveech99/workspace/projects/lab06/_build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/matvey/matveech99/workspace/projects/lab09/_build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -194,6 +194,43 @@ print/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/print.dir/build.make CMakeFiles/print.dir/build
 .PHONY : print/fast
 
+#=============================================================================
+# Target rules for targets named demo
+
+# Build rule for target.
+demo: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 demo
+.PHONY : demo
+
+# fast build rule for target.
+demo/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/demo.dir/build.make CMakeFiles/demo.dir/build
+.PHONY : demo/fast
+
+demo/main.o: demo/main.cpp.o
+.PHONY : demo/main.o
+
+# target to build an object file
+demo/main.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/demo.dir/build.make CMakeFiles/demo.dir/demo/main.cpp.o
+.PHONY : demo/main.cpp.o
+
+demo/main.i: demo/main.cpp.i
+.PHONY : demo/main.i
+
+# target to preprocess a source file
+demo/main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/demo.dir/build.make CMakeFiles/demo.dir/demo/main.cpp.i
+.PHONY : demo/main.cpp.i
+
+demo/main.s: demo/main.cpp.s
+.PHONY : demo/main.s
+
+# target to generate assembly for a file
+demo/main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/demo.dir/build.make CMakeFiles/demo.dir/demo/main.cpp.s
+.PHONY : demo/main.cpp.s
+
 sources/print.o: sources/print.cpp.o
 .PHONY : sources/print.o
 
@@ -232,7 +269,11 @@ help:
 	@echo "... package"
 	@echo "... package_source"
 	@echo "... rebuild_cache"
+	@echo "... demo"
 	@echo "... print"
+	@echo "... demo/main.o"
+	@echo "... demo/main.i"
+	@echo "... demo/main.s"
 	@echo "... sources/print.o"
 	@echo "... sources/print.i"
 	@echo "... sources/print.s"

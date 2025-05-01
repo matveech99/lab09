@@ -8,21 +8,21 @@
 > pushd .
 ~/matveech99/workspace ~
 > source scripts/activate
-> git clone https://github.com/${GITHUB_USERNAME}/lab07 lab08
-Клонирование в «lab08»...
+> git clone https://github.com/${GITHUB_USERNAME}/lab07 lab09
+Клонирование в «lab09»...
 remote: Enumerating objects: 375, done.
 remote: Counting objects: 100% (375/375), done.
 remote: Compressing objects: 100% (174/174), done.
 remote: Total 375 (delta 164), reused 371 (delta 163), pack-reused 0 (from 0)
 Получение объектов: 100% (375/375), 2.13 МиБ | 3.96 МиБ/с, готово.
 Определение изменений: 100% (164/164), готово.
-> cd lab08
+> cd lab09
 > git submodule update --init
 Подмодуль «tools/polly» (https://github.com/ruslo/polly) зарегистрирован по пути «tools/polly»
-Клонирование в «/home/matvey/matveech99/workspace/lab08/tools/polly»...
+Клонирование в «/home/matvey/matveech99/workspace/lab09/tools/polly»...
 Submodule path 'tools/polly': checked out 'ef7e79c2c297d456f2742fd0b976f555d058d4e0'
 > git remote remove origin
-> git remote add origin https://github.com/${GITHUB_USERNAME}/lab08
+> git remote add origin https://github.com/${GITHUB_USERNAME}/lab09
 > cat > Dockerfile <<EOF
 FROM ubuntu:18.04
 EOF
@@ -630,12 +630,12 @@ cat: logs/log.txt: Нет такого файла или каталога
 text2
 text3
 <C-D>
-> gsed -i 's/lab07/lab08/g' README.md
+> gsed -i 's/lab07/lab09/g' README.md
 
 
 zsh: command not found: gsed
 > alias gsed=sed
-> gsed -i 's/lab07/lab08/g' README.md
+> gsed -i 's/lab07/lab09/g' README.md
 
 
 > vim .travis.yml
@@ -655,5 +655,5 @@ zsh: command not found: gsed
 Запись объектов: 100% (382/382), 2.13 МиБ | 3.64 МиБ/с, готово.
 Всего 382 (изменений 167), повторно использовано 372 (изменений 164), повторно использовано пакетов 0
 remote: Resolving deltas: 100% (167/167), done.
-To https://github.com/matveech99/lab08
+To https://github.com/matveech99/lab09
  * [new branch]      main -> main
